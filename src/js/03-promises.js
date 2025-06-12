@@ -4,14 +4,11 @@ formEL.addEventListener('submit', onPromiseSubmit);
 function createPromise(position, delay) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      // const shouldResolve = Math.random();
       const shouldResolve = Math.random() > 0.3;
       if (shouldResolve) {
-        // resolve(`✅ Fulfilled promise ${position} in ${delay}ms`);
-        resolve({ position, delay });
-      } else {
-        // reject(`❌ Rejected promise ${position} in ${delay}ms`);
-        reject({ position, delay });
+        resolve(`✅ Fulfilled promise ${position} in ${delay}ms`);
+        } else {
+        reject(`❌ Rejected promise ${position} in ${delay}ms`); 
       }
     }, delay);
   });
